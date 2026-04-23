@@ -86,4 +86,14 @@ SERVER_IP=127.0.0.1 SERVER_PORT=6001 MESSAGE="Xin chao FIT4012" python sender.py
 ### 5) Chạy toàn bộ test
 ```bash
 pytest tests/ -v
+
+## Input / Output
+
+### Input
+- Sender nhận bản tin từ bàn phím hoặc từ biến môi trường `MESSAGE`.
+- Receiver nhận packet qua TCP socket.
+
+### Output
+- Sender in ra: thông báo gửi thành công, `Key`, `IV`, `Ciphertext`.
+- Receiver in ra: bản tin gốc sau giải mã.
 ```
