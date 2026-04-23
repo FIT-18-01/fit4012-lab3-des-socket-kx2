@@ -1,9 +1,2 @@
-============================= test session starts =============================
-platform win32 -- Python 3.13.2, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\Admin\AppData\Local\Programs\Python\Python313\python.exe
-cachedir: .pytest_cache
-rootdir: C:\Users\Admin\fit4012-lab3-des-socket-tuy-t
-collecting ... collected 1 item
-
-tests/test_tamper_negative.py::test_tampered_ciphertext_should_fail_or_change_plaintext PASSED [100%]
-
-============================== 1 passed in 0.02s ==============================
+Tamper test: modify last byte of ciphertext.
+Caught exception: ValueError: Padding không hợp lệ.

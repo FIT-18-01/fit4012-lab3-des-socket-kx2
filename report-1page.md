@@ -14,8 +14,8 @@ Mục tiêu của bài lab này là xây dựng thành công một hệ thống 
     - Thực hiện chạy demo thực tế và trích xuất dữ liệu `logs/` minh chứng.
 - **Cao Minh Hưng (Phụ trách chính Receiver)**: 
     - Lập trình luồng nhận và giải mã dữ liệu trong `receiver.py`.
-    - Thiết lập và thực thi các bộ kiểm thử tự động tại thư mục `tests/`.
-    - Nghiên cứu và soạn thảo nội dung phân tích cho `threat-model-1page.md`.
+    - Thiết lập, viết và thực thi các bộ kiểm thử tự động trong thư mục `tests/`, bao gồm các trường hợp lỗi như giả mạo dữ liệu và sai khóa.
+    - Nghiên cứu các mối đe dọa liên quan đến truyền khóa và dữ liệu mã hóa, đồng thời soạn thảo nội dung phân tích trong `threat-model-1page.md`.
 - **Phần làm chung**: Cài đặt thuật toán DES-CBC, cơ chế Padding PKCS#7; thảo luận về các lỗ hổng bảo mật và hoàn thiện báo cáo tổng kết.
 
 ## Cách làm

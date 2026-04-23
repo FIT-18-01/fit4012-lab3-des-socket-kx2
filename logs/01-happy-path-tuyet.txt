@@ -1,22 +1,4 @@
-================================================================================
-LOG: Ca 1 - Happy Path - Nguyễn Thị Tuyết
-Thời điểm: 2026-04-21 15:30:00
-Người thực hiện: Nguyễn Thị Tuyết
-Input: "Chao mung FIT4012 - Nguyen Thi Tuyet"
-Tình huống: Gửi bản tin hợp lệ, giải mã thành công
-================================================================================
-
-[TERMINAL 1 - RECEIVER]
-Đang lắng nghe 0.0.0.0:6000...
-Kết nối từ ('127.0.0.1', 49808)
-[+] Bản tin gốc: Chao mung FIT4012 - Nguyen Thi Tuyet
-
-[TERMINAL 2 - SENDER]
 [+] Đã gửi bản mã.
-Key: 8b1944821cae32f5
-IV:  881ef6dc813951e8
-Ciphertext: 9950c9e13b7ae9e874eb5a4b7610d40a9611ebf3ecc97f0eb84fbcd27efee0fb3dd4a3f7ab5ac152
-
-================================================================================
-Kết quả: PASS - Receiver giải mã đúng bản tin gốc
-================================================================================
+Key: 0f259efbea7ee2a9
+IV: a0b2e597357dfb20
+Ciphertext: deb2f2ae034fbb70dd4597f448a8af4f80a93f2fc6b1698ff427ebf056ddc086
