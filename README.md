@@ -97,3 +97,5 @@ pytest tests/ -v
 - Sender in ra: thông báo gửi thành công, `Key`, `IV`, `Ciphertext`.
 - Receiver in ra: bản tin gốc sau giải mã.
 ```
+## Threat-model awareness
+Hệ thống hiện tại gửi Key và IV dưới dạng plaintext trên cùng luồng TCP, đây là điểm yếu bảo mật nghiêm trọng nếu triển khai thực tế. Chi tiết phân tích xem tại `threat-model-1page.md`.
