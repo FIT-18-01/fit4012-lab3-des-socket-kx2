@@ -1,0 +1,16 @@
+=== LOG: HAPPY PATH - RECEIVER (CAO MINH HƯNG) ===
+Thời gian: 2026-04-21 15:32
+Người thực hiện: Cao Minh Hưng
+Tình huống: Receiver nhận gói tin từ Tuyết và giải mã bản rõ.
+
+[RECEIVER OUTPUT]
+$ python receiver.py
+[*] Đang lắng nghe tại cổng 6001...
+[*] Nhận kết nối từ ('127.0.0.1', 54321)
+[*] Bóc tách Header thành công:
+    - Key: b'TuyetKey'
+    - IV: b'12345678'
+    - Ciphertext Length: 40 bytes
+[+] Đang thực hiện giải mã DES-CBC...
+[+] Thực hiện Unpad PKCS#7...
+[+] BẢN TIN GỐC: Chao mung den voi Lab 3 - Tuyet & Hung

@@ -1,0 +1,10 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.2, pytest-9.0.3, pluggy-1.6.0 -- C:\Users\Admin\AppData\Local\Programs\Python\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Admin\fit4012-lab3-des-socket-tuy-t
+collecting ... collected 2 items
+
+tests/test_padding_and_header.py::test_pad_unpad_roundtrip PASSED        [ 50%]
+tests/test_padding_and_header.py::test_build_packet_contains_correct_length PASSED [100%]
+
+============================== 2 passed in 0.02s ==============================
