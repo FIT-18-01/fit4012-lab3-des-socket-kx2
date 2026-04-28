@@ -1,0 +1,20 @@
+[INFO] Time: 2026-04-28 08:12:00
+[INFO] Demo by: Nguyen Trung Kien
+
+[INFO] Scenario: Send encrypted message using DES-CBC over socket
+[INFO] Input message: Hello from sender
+
+[INFO] Sender started
+[INFO] Connecting to 127.0.0.1:6000
+[INFO] Connected
+
+[INFO] Encrypting message...
+[INFO] Encryption done
+
+[INFO] Sending encrypted data...
+[INFO] Data sent successfully
+
+[INFO] Result: Message encrypted and sent successfully
+[INFO] Error: None
+
+[INFO] Sender finished

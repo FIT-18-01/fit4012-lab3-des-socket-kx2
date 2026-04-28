@@ -1,0 +1,22 @@
+[INFO] Time: 2026-04-28 08:13:00
+[INFO] Demo by: Nguyen Trung Kien
+
+[INFO] Scenario: Receive and decrypt DES-CBC message over socket
+
+[INFO] Receiver started
+[INFO] Đang lắng nghe 0.0.0.0:6000...
+
+[INFO] Client connected from 127.0.0.1
+
+[INFO] Receiving encrypted data...
+[INFO] Data received
+
+[INFO] Decrypting message...
+[INFO] Decryption done
+
+[INFO] Output message: Hello from sender
+
+[INFO] Result: Message received and decrypted successfully
+[INFO] Error: None
+
+[INFO] Receiver finished
