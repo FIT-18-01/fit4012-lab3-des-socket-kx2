@@ -12,18 +12,18 @@ Bài lab bám theo luồng hệ thống trong file hướng dẫn: Sender tạo 
 - Khi demo, giảng viên có thể hỏi chéo bất kỳ thành viên nào về **sender**, **receiver**, **DES-CBC**, **padding**, **threat model** và **ethics**.
 
 ## Team members
-- **Thành viên 1**: TODO_MEMBER_1 - MSSV: TODO_MEMBER_1_ID
-- **Thành viên 2**: TODO_MEMBER_2 - MSSV: TODO_MEMBER_2_ID
+- **Thành viên 1**: Nguyễn Trung Kiên - MSSV: 1871020345
+- **Thành viên 2**: Hoàng Nhật Anh - MSSV: 1871020064
 
 ## Task division
-- **Thành viên 1 phụ trách chính**: TODO_ROLE_MEMBER_1
-- **Thành viên 2 phụ trách chính**: TODO_ROLE_MEMBER_2
-- **Phần làm chung**: TODO_SHARED_WORK
+- **Thành viên 1 phụ trách chính**: Xây dựng `sender.py`, phần tạo gói tin, hỗ trợ log gửi và viết các test liên quan đến padding/header/tamper, xây dựng `receiver.py`, phần giải mã và log nhận, đồng thời kiểm thử luồng nhận dữ liệu qua socket.
+- **Thành viên 2 phụ trách chính**: rà soát toàn bộ kết quả chạy thử.
+- **Phần làm chung**: Thiết kế format packet, viết tài liệu `report-1page.md`, `threat-model-1page.md`, `peer-review-response.md`.
 
 ## Demo roles
-- **Bạn nào demo Sender / gói tin / log gửi**: TODO_DEMO_ROLE_1
-- **Bạn nào demo Receiver / giải mã / log nhận**: TODO_DEMO_ROLE_2
-- **Cả hai cùng trả lời threat model và ethics**: TODO_DEMO_ROLE_SHARED
+- **Bạn nào demo Sender / gói tin / log gửi**: Nguyễn Trung Kiên.
+- **Bạn nào demo Receiver / giải mã / log nhận**: Nguyễn Trung Kiên.
+- **Cả hai cùng trả lời threat model và ethics**: Cả hai cùng trình bày.
 
 ## Mục tiêu học tập
 - Hiểu luồng hoạt động của hệ thống Sender/Receiver qua TCP socket.
