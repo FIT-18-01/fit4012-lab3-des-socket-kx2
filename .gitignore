@@ -3,7 +3,10 @@ __pycache__/
 *.pyc
 *.pyo
 *.log
+!logs/demo_sender.log
+!logs/demo_receiver.log
 *.txt
+!requirements.txt
 !.gitkeep
 venv/
 .venv/
