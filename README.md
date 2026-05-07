@@ -3,93 +3,67 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/XQ0Tagn8)
 
 ## Team members
-- **Thành viên 1**: Nguyễn Thị Tuyết 
-- **Thành viên 2**: Cao Minh Hưng 
+- **Thành viên 1**: Nguyễn Trung Kiên - MSSV: 1871020345
+- **Thành viên 2**: Hoàng Nhật Anh - MSSV: 1871020064
 
 ## Task division
-- **Thành viên 1 (Tuyết) phụ trách chính**: 
-    - Lập trình luồng gửi dữ liệu trong `sender.py`.
-    - Xây dựng cấu trúc đóng gói gói tin (Build packet) trong `des_socket_utils.py`.
-    - Thực hiện chạy demo thực tế và trích xuất dữ liệu minh chứng vào thư mục `logs/`.
-- **Thành viên 2 (Hưng) phụ trách chính**: 
-    - Lập trình luồng nhận và giải mã dữ liệu trong `receiver.py`.
-    - Thiết lập và thực thi các bộ kiểm thử tự động tại thư mục `tests/`.
-    - Soạn thảo nội dung phân tích rủi ro bảo mật trong `threat-model-1page.md`.
-- **Phần làm chung**: Cài đặt thuật toán DES-CBC, cơ chế Padding PKCS#7; thảo luận về các lỗ hổng bảo mật và hoàn thiện các file báo cáo Markdown.
+- **Thành viên 1 phụ trách chính**: Xây dựng `sender.py`, phần tạo gói tin, hỗ trợ log gửi và viết các test liên quan đến padding/header/tamper, xây dựng `receiver.py`, phần giải mã và log nhận, đồng thời kiểm thử luồng nhận dữ liệu qua socket.
+- **Thành viên 2 phụ trách chính**: rà soát toàn bộ kết quả chạy thử.
+- **Phần làm chung**: Thiết kế format packet, viết tài liệu `report-1page.md`, `threat-model-1page.md`, `peer-review-response.md`.
 
 ## Demo roles
-- **Nguyễn Thị Tuyết**: Demo Sender, giải thích cấu trúc gói tin (Header 20 bytes) và trình bày các log gửi dữ liệu thành công.
-- **Cao Minh Hưng**: Demo Receiver, giải thích quy trình bóc tách gói tin, giải mã dữ liệu và trình bày kết quả `pytest`.
-- **Cả hai**: Cùng trả lời các câu hỏi về mô hình tấn công MITM, rủi ro lộ khóa và các nguyên tắc đạo đức (Ethics).
+- **Bạn nào demo Sender / gói tin / log gửi**: Nguyễn Trung Kiên.
+- **Bạn nào demo Receiver / giải mã / log nhận**: Nguyễn Trung Kiên.
+- **Cả hai cùng trả lời threat model và ethics**: Cả hai cùng trình bày.
+
+## Mục tiêu học tập
+- Hiểu luồng hoạt động của hệ thống Sender/Receiver qua TCP socket.
+- Mô tả được vai trò của **key**, **IV**, **padding PKCS#7**, **header độ dài**.
+- Cài đặt và chạy được hệ thống gửi/nhận dữ liệu mã hoá DES qua socket.
+- Viết được **threat model** ngắn gọn cho hệ thống.
+- Ghi nhận được các hạn chế bảo mật của thiết kế hiện tại và nêu hướng cải tiến.
 
 ## Cấu trúc repo
-- `sender.py`: Tiến trình người gửi.
-- `receiver.py`: Tiến trình người nhận.
-- `des_socket_utils.py`: Chứa các hàm bổ trợ mã hóa và xử lý gói tin.
-- `tests/`: Chứa 5 file kiểm thử tự động (Đã đạt 100% Passed).
-- `logs/`: Chứa các file log minh chứng chạy thực tế:
-  - `01-happy-path-tuyet.txt`: Tuyết chạy demo happy path.
-  - `02-happy-path-hung.txt`: Hưng chạy demo happy path.
-  - `03-tamper.txt`, `04-wrong-key.txt`, `05-header-error.txt`: Tuyết chạy các ca kiểm thử lỗi (pytest).
-- `threat-model-1page.md`: Tài liệu phân tích mối đe dọa.
-- `peer-review-response.md`: Phản hồi và chỉnh sửa sau đánh giá chéo.
-- `report-1page.md`: Báo cáo tổng kết bài Lab.
+- `sender.py`: tiến trình người gửi
+- `receiver.py`: tiến trình người nhận
+- `des_socket_utils.py`: hàm pad/unpad, encrypt/decrypt, build/parse packet
+- `tests/`: kiểm thử tự động
+- `logs/`: nơi lưu log minh chứng
+- `threat-model-1page.md`: threat model cho hệ thống
+- `peer-review-response.md`: ghi nhận góp ý và chỉnh sửa sau peer review
+- `report-1page.md`: báo cáo ngắn
 
 ## How to run
-
 ### 1) Cài môi trường
-
-**Windows:**
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-**Linux/Mac:**
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2) Chạy Receiver (Terminal 1)
+### 2) Chạy Receiver
 ```bash
 python receiver.py
 ```
 
-### 3) Chạy Sender (Terminal 2)
+### 3) Chạy Sender
 ```bash
 python sender.py
 ```
+Rồi nhập bản tin khi chương trình hỏi.
 
 ### 4) Chạy demo local bằng biến môi trường
-
-**Windows — Terminal 1:**
-```bash
-set SOCKET_TIMEOUT=60 && python receiver.py
-```
-**Windows — Terminal 2:**
-```bash
-set MESSAGE=Xin chao FIT4012 && python sender.py
-```
-
-**Linux/Mac — Terminal 1:**
+Terminal 1:
 ```bash
 RECEIVER_PORT=6001 python receiver.py
 ```
-**Linux/Mac — Terminal 2:**
+
+Terminal 2:
 ```bash
 SERVER_IP=127.0.0.1 SERVER_PORT=6001 MESSAGE="Xin chao FIT4012" python sender.py
 ```
 
-### 5) Chạy toàn bộ test
-```bash
-pytest tests/ -v
-```
-
 ## Input / Output
-
 ### Input
 - Sender nhận bản tin từ bàn phím hoặc từ biến môi trường `MESSAGE`.
 - Receiver nhận packet qua TCP socket.
@@ -97,9 +71,24 @@ pytest tests/ -v
 ### Output
 - Sender in ra: thông báo gửi thành công, `Key`, `IV`, `Ciphertext`.
 - Receiver in ra: bản tin gốc sau giải mã.
+- Bạn cần lưu **log chạy thật** vào thư mục `logs/` để làm minh chứng nộp bài.
+
+## Deliverables bắt buộc
+- `README.md`
+- `report-1page.md`
+- `threat-model-1page.md`
+- `peer-review-response.md`
+- `tests/` có ít nhất 5 test
+- `logs/` có log chạy thật của các ca kiểm thử
+- thông tin **nhóm 2 người + phân công** trong `README.md`
 
 ## Threat-model awareness
-Hệ thống hiện tại gửi Key và IV dưới dạng plaintext trên cùng luồng TCP, đây là điểm yếu bảo mật nghiêm trọng nếu triển khai thực tế. Chi tiết phân tích xem tại `threat-model-1page.md`.
+Vì lab này đang dùng mô hình **gửi key và IV dưới dạng plaintext trên cùng luồng TCP**, bạn cần chỉ ra đây là điểm yếu bảo mật nghiêm trọng nếu đưa ra thực tế. Trong `threat-model-1page.md`, hãy nêu rõ:
+- assets
+- attacker model
+- threats
+- mitigations
+- residual risks
 
 ## Ethics & Safe use
 - Chỉ chạy demo trên máy cá nhân, VM, hoặc mạng nội bộ phục vụ học tập.
@@ -108,3 +97,15 @@ Hệ thống hiện tại gửi Key và IV dưới dạng plaintext trên cùng 
 - Không trình bày hệ thống này như một giải pháp an toàn sẵn sàng triển khai ngoài đời.
 - Nếu tham khảo code/tài liệu, hãy ghi nguồn rõ ràng.
 - Tôn trọng nguyên tắc trung thực học thuật.
+
+## Submission contract cho CI
+CI sẽ kiểm tra:
+- có đủ file nộp bài
+- có ít nhất 5 test
+- chạy được kiểm thử local sender/receiver
+- có negative test cho **tamper** và **wrong key**
+- `README.md` đã khai báo **2 thành viên**, **phân công**, **vai trò demo**
+- các file `report-1page.md`, `threat-model-1page.md`, `peer-review-response.md` không còn dòng `TODO_STUDENT`
+- thư mục `logs/` có ít nhất 1 file log thật
+
+Nếu CI đỏ, đừng hoảng. Cứ xem nó như một trợ giảng hơi khó tính nhưng vẫn muốn bạn qua môn.

@@ -1,4 +1,0 @@
-[+] Đã gửi bản mã.
-Key: 0f259efbea7ee2a9
-IV: a0b2e597357dfb20
-Ciphertext: deb2f2ae034fbb70dd4597f448a8af4f80a93f2fc6b1698ff427ebf056ddc086
